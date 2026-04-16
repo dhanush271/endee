@@ -1,0 +1,9 @@
+from sklearn.feature_extraction.text import TfidfVectorizer
+import pickle
+
+vectorizer = TfidfVectorizer(stop_words='english')
+
+X = vectorizer.fit_transform(df['message'])
+
+# Save vectorizer
+pickle.dump(vectorizer, open("vectorizer.pkl", "wb"))
